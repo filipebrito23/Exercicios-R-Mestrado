@@ -13,7 +13,7 @@
   
   
   #Parâmetros da distribuição escolhida (Weibull)
-  n=10 #Tamanho
+  n=5 #Tamanho
   lambda=0.5 #Parâmetro de escala
   k= 2 #Parâmetro de forma
   
@@ -52,7 +52,12 @@
   
   #Gráficos
   
-  ggplot(total_f, aes(x=x, y=fdp, group=dist, colour=dist)
-  ,geom_line(), 
-  ,theme(legend.justification =c(1.8,2), legend.position = c(1.8,2)
-         , legend.box.margin = c(50,50,50,50)))
+  ggplot(total_f, aes(x=x, y=fdp, group=dist, colour=dist))+
+  geom_line()+
+  scale_y_continuous(name = "fdp", limits = c(0, 10000))
+  #theme(legend.justification =c(1.8,2), legend.position = c(1.8,2)
+     #  , legend.box.margin = c(1,1,1,1)
+  
+  #ggplot(total_f, aes(x = x, y = fdp, colour = dist, ylim=(0,10000))) +
+ #   geom_point()
+  
